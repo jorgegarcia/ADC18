@@ -26,7 +26,6 @@ if __name__ == "__main__":
     cutoff = 2000.0 #Cutoff Frequency in Hz
 
     # Plot the frequency response for a few different orders.
-    figureCounter = 1
     for order in [2, 4, 8]:
         b, a = butter_lowpass(cutoff, fs, order)
         w, h = freqz(b, a)
