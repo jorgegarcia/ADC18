@@ -9,7 +9,7 @@ if __name__ == "__main__":
     fs, data = wavfile.read("331025__dshoot85__orchestral-loop-with-oriental-touch-mono.wav")
     data = data / 2.0 ** 15
 
-    cutoff = 2000.0 #Cutoff Frequency in Hz
+    cutoff = 2000.0 # Cutoff Frequency in Hz
 
     # Calculate second-order Butterworth filter coefficients (Low pass)
     filterLambda = 1 / np.tan(np.pi * cutoff / fs)
@@ -33,7 +33,7 @@ if __name__ == "__main__":
         yn_2 = yn_1
         yn_1 = y[n]
 
-    #Plot spectrogram
+    # Plot spectrogram
     plt.figure()
     plt.clf()
     plt.axes(xlabel="Time (seconds)", ylabel="Frequency (Hz)")
