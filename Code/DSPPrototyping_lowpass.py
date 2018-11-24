@@ -23,7 +23,7 @@ if __name__ == "__main__":
     fs, data = wavfile.read("331025__dshoot85__orchestral-loop-with-oriental-touch-mono.wav")
     data = data / 2.0 ** 15
 
-    cutoff = 2000.0 #Cutoff Frequency in Hz
+    cutoff = 2000.0 # Cutoff Frequency in Hz
 
     # Plot the frequency response for a few different orders.
     for order in [2, 4, 8]:
@@ -37,7 +37,7 @@ if __name__ == "__main__":
         plt.plot((fs * 0.5 / np.pi) * w, abs(h), label="order = %d" % order)
         plt.legend(loc='best')
 
-    #Filter the signal and plot spectrogram
+    # Filter the signal and plot spectrogram
     filtered = butter_lowpass_filter(data, cutoff, fs, 8)
     plt.figure()
     plt.clf()
